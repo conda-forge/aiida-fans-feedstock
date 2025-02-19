@@ -147,5 +147,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@EMMAOpenSource](https://github.com/EMMAOpenSource/)
 * [@claudiushaag](https://github.com/claudiushaag/)
+* [@sanathkeshav](https://github.com/sanathkeshav/)
 
