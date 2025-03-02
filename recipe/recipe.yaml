@@ -15,6 +15,12 @@ build:
   noarch: python
   script: python -m pip install . -vv
   number: 0
+  python:
+    entry_points:
+      - fans = aiida_fans.data:FANSParameters
+      - fans = aiida_fans.calculations:FANSCalculation
+      - fans = aiida_fans.parsers:FANSParser
+      - fans = aiida_fans.cli:data_cli
 
 requirements:
   host:
