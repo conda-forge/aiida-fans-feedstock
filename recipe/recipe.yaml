@@ -25,6 +25,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - aiida-core >=2.3.0
+    - h5py
 
 tests:
   - python:
