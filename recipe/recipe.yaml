@@ -1,6 +1,6 @@
 context:
   name: aiida-fans
-  version: "0.1.4"
+  version: "0.1.5"
   python_min: "3.11"
 
 package:
@@ -9,12 +9,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name | replace("-", "_") }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
-  sha256: 28415a9ba4338ba4088d239600ad81c2d0c78e85b72cfec14f7814749fee14c4
+  sha256: b836bb17b964c017ea736b663c44eb8cbb075489a6efddc96b4889e09ce991da
 
 build:
   noarch: python
   script: python -m pip install . -vv
   number: 0
+  python:
+    entry_points:
+      - fans = aiida_fans.data:FANSParameters
+      - fans = aiida_fans.calculations:FANSCalculation
+      - fans = aiida_fans.parsers:FANSParser
+      - fans = aiida_fans.cli:data_cli
 
 requirements:
   host:
@@ -25,20 +31,21 @@ requirements:
   run:
     - python >=${{ python_min }}
     - aiida-core >=2.3.0
+    - h5py
 
 tests:
   - python:
       imports:
-      - aiida_fans
+        - aiida_fans
       pip_check: true
       python_version: ${{ python_min }}.*
   - if: osx or linux
     then:
-    - script:
-        - verdi plugin list aiida.calculations fans
-      requirements:
-        run:
-          - python ${{ python_min }}.*
+      - script:
+          - verdi plugin list aiida.calculations fans
+        requirements:
+          run:
+            - python ${{ python_min }}.*
 
 about:
   homepage: https://github.com/ethan-shanahan/aiida-fans
