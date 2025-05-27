@@ -30,7 +30,7 @@ requirements:
     - setuptools-scm >=8.0.0
   run:
     - python >=${{ python_min }}
-    - aiida-core >=2.3.0
+    - aiida-core >=2.6.0
     - h5py
 
 tests:
