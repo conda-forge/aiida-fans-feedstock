@@ -42,7 +42,8 @@ tests:
   - if: osx or linux
     then:
       - script:
-          - verdi plugin list aiida.calculations fans
+          - verdi plugin list aiida.calculations fans.stashed
+          - verdi plugin list aiida.calculations fans.fragmented
         requirements:
           run:
             - python ${{ python_min }}.*
