@@ -1,6 +1,6 @@
 context:
   name: aiida-fans
-  version: "0.1.5"
+  version: "0.2.0"
   python_min: "3.11"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name | replace("-", "_") }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
-  sha256: b836bb17b964c017ea736b663c44eb8cbb075489a6efddc96b4889e09ce991da
+  sha256: 2218ac25a1d3869695653176e282f5799c9f6b78ac1808e81a983ba36f0366c1
 
 build:
   noarch: python
@@ -30,7 +30,7 @@ requirements:
     - setuptools-scm >=8.0.0
   run:
     - python >=${{ python_min }}
-    - aiida-core >=2.3.0
+    - aiida-core >=2.6.0
     - h5py
 
 tests:
@@ -42,7 +42,8 @@ tests:
   - if: osx or linux
     then:
       - script:
-          - verdi plugin list aiida.calculations fans
+          - verdi plugin list aiida.calculations fans.stashed
+          - verdi plugin list aiida.calculations fans.fragmented
         requirements:
           run:
             - python ${{ python_min }}.*
