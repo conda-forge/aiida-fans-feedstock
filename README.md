@@ -149,5 +149,6 @@ Feedstock Maintainers
 
 * [@EMMAOpenSource](https://github.com/EMMAOpenSource/)
 * [@claudiushaag](https://github.com/claudiushaag/)
+* [@ethan-shanahan](https://github.com/ethan-shanahan/)
 * [@sanathkeshav](https://github.com/sanathkeshav/)
 
