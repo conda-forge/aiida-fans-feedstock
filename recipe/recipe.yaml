@@ -1,6 +1,6 @@
 context:
   name: aiida-fans
-  version: "0.2.0"
+  version: "0.2.1"
   python_min: "3.11"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name | replace("-", "_") }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
-  sha256: 2218ac25a1d3869695653176e282f5799c9f6b78ac1808e81a983ba36f0366c1
+  sha256: 225a5a106c0cee2249edd3d61815bedfa763a0dbf8421716bb5dd6b4283e9628
 
 build:
   noarch: python
